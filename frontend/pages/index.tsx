@@ -5,7 +5,7 @@ import Head from 'next/head'
 const StyledButton = styled.button`
   background-color: red;
   padding: 4rem;
-  margin: 4rem;
+  margin: 4em;
 `
 
 const Home: NextPage = () => {
