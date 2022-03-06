@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
 const PageContainer = styled.div`
@@ -37,6 +38,7 @@ const Heading = styled.h1`
 `
 
 const Home: NextPage = () => {
+  const router = useRouter()
   return (
     <PageContainer>
       <Head>
@@ -50,7 +52,9 @@ const Home: NextPage = () => {
 
       <MainContainer>
         <Heading>Next.js SSR Prototype</Heading>
-        <PrimaryButton>Go to blog</PrimaryButton>
+        <PrimaryButton onClick={() => router.push('/blog')}>
+          Go to blog
+        </PrimaryButton>
       </MainContainer>
     </PageContainer>
   )
