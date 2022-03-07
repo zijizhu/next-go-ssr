@@ -4,8 +4,10 @@ const Blog: NextPage<{ data: { blog: string } }> = ({ data }) => {
   return <div>{data.blog}</div>
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(`${process.env.BACKEND_URL}/blog/1`)
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const res = await fetch(
+    `${process.env.BACKEND_URL}/blog/${context.params?.bid}`
+  )
   const data = await res.json()
   return {
     props: { data }
