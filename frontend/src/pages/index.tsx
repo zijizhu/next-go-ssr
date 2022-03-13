@@ -7,6 +7,8 @@ import PrimaryButton from '../components/PrimaryButton'
 import PageContainer from '../components/PageContainer'
 import MainContainer from '../components/MainContainer'
 
+import Blog from '../components/Blog'
+
 const Heading = styled.h1`
   font-weight: 800;
 `
@@ -30,6 +32,7 @@ const Home: NextPage = () => {
         <PrimaryButton onClick={() => router.push('/blog')}>
           Go to blog
         </PrimaryButton>
+        <Blog />
       </MainContainer>
     </PageContainer>
   )
