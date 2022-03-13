@@ -40,45 +40,14 @@ const Block = ({ element }: { element: Element }) => {
   )
 }
 
-const Blog = () => {
+const Blog = ({ elements }: { elements: Element[] }) => {
   return (
     <BlogContainer>
-      {initialValue.map((element, idx) => (
+      {elements.map((element, idx) => (
         <Block key={idx} element={element} />
       ))}
     </BlogContainer>
   )
 }
 
-const initialValue: Element[] = [
-  {
-    type: 'paragraph',
-    children: [
-      { text: 'This is ' },
-      { text: 'rich', bold: true },
-      { text: ' text, ' },
-      { text: 'much', italic: true, underline: true, bold: true },
-      { text: ' better', italic: true, bold: true },
-      { text: ' than plain text!', bold: true }
-    ]
-  },
-  {
-    type: 'paragraph',
-    align: 'right',
-    children: [
-      {
-        text: 'It is also '
-      },
-      { text: 'server-side rendered', bold: true },
-      {
-        text: ', which means the server fetches the data and generates HTML for the client!'
-      }
-    ]
-  },
-  {
-    type: 'paragraph',
-    align: 'center',
-    children: [{ text: 'Try it out for yourself!' }]
-  }
-]
 export default Blog

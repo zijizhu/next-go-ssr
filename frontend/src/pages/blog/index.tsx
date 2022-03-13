@@ -48,7 +48,6 @@ const BlogHome: NextPage = () => {
         <Heading>Blog Homepage</Heading>
         <p>there are {numBlogs} blogs</p>
         <Link href="/blog/1">blog 1</Link>
-        <Link href="/blog/2">blog 2</Link>
         <BackButton onClick={() => router.push('/')}>Back to home</BackButton>
       </MainContainer>
     </PageContainer>
