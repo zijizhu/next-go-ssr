@@ -1,13 +1,10 @@
-export interface TextStyle {
-  bold?: boolean
-  italic?: boolean
-  underline?: boolean
+export interface Document {
+  document_name: string
+  document_id: string
+  content: Element[]
 }
 
-interface Text extends TextStyle {
-  text: string
-  link?: string
-}
+export type Element = Paragraph | Image
 
 interface Paragraph {
   type: 'paragraph'
@@ -20,10 +17,13 @@ interface Image {
   url: string
 }
 
-export type Element = Paragraph | Image
+interface Text extends TextStyle {
+  text: string
+  link?: string
+}
 
-export interface Document {
-  document_name: string
-  document_id: string
-  content: Element[]
+export interface TextStyle {
+  bold?: boolean
+  italic?: boolean
+  underline?: boolean
 }

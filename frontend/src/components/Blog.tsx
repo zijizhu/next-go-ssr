@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import type { Element, TextStyle } from '../types'
+import Link from 'next/link'
 
 interface ParagraphStyle {
   align?: 'left' | 'right' | 'center'
@@ -10,6 +11,10 @@ const Text = styled.span<TextStyle>`
   font-style: ${(props) => (props.italic ? 'italic' : 'normal')};
   text-decoration-line: ${(props) => (props.underline ? 'underline' : 'none')};
 `
+const StyledLink = styled.span`
+  color: red;
+`
+
 const ImagePlaceholder = styled.div`
   width: 200px;
   height: 200px;
@@ -33,7 +38,15 @@ const Block = ({ element }: { element: Element }) => {
     <ParagraphBlock align={element.align}>
       {element.children.map(({ text, link, ...textStyle }, idx) => (
         <Text key={idx} {...textStyle}>
-          {text}
+          {link ? (
+            <StyledLink>
+              <Link href={link} passHref>
+                {text}
+              </Link>
+            </StyledLink>
+          ) : (
+            <>{text}</>
+          )}
         </Text>
       ))}
     </ParagraphBlock>

@@ -43,31 +43,45 @@ const data: Element[] = [
   {
     type: 'paragraph',
     children: [
-      { text: 'This is ' },
-      { text: 'rich', bold: true },
-      { text: ' text, ' },
-      { text: 'much', italic: true, underline: true, bold: true },
-      { text: ' better', italic: true, bold: true },
-      { text: ' than plain text!', bold: true }
-    ]
-  },
-  {
-    type: 'paragraph',
-    align: 'right',
-    children: [
+      { text: 'Lorem Ipsum', bold: true, link: 'https://www.lipsum.com/' },
       {
-        text: 'It is also '
+        text: ' is simply dummy text of the printing and typesetting industry.',
+        bold: true
       },
-      { text: 'server-side rendered', bold: true },
+      { text: 'Lorem Ipsum has been ', bold: true },
+      { text: 'the industry standard', underline: true, bold: true },
       {
-        text: ', which means the server fetches the data and generates HTML for the client!'
+        text: ' dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       }
     ]
   },
   {
     type: 'paragraph',
     align: 'center',
-    children: [{ text: 'Try it out for yourself!' }]
+    children: [
+      {
+        text: 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.'
+      },
+      {
+        text: ' It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        bold: true
+      },
+      {
+        text: 'Lorem Ipsum',
+        bold: true,
+        italic: true,
+        underline: true
+      },
+      {
+        text: ' passages',
+        bold: true,
+        italic: true
+      },
+      {
+        text: ', and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        bold: true
+      }
+    ]
   }
 ]
 
